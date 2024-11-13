@@ -14,56 +14,112 @@ body{
     background: rgb(187, 188, 224);
 }
 
-#container{
+section{
+    background-color: rgb(255,255,255);
+    color: #161616;
+    border-radius: 2rem;
+    overflow: hidden;
+    max-width: 70%;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0,0,0.1);
+}
+
+#container-auth{
     display: flex;
+    min-height: 450px;
+}
+
+#container-left{
+    width: 50%;
     align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
-#branco{
-    background-color: rgb(255, 255, 255);
-    width: 500px;
-    height: 500px;
+#container-left h3{
+    font-size: 2rem;
+    padding: 1rem;
+    opacity: 0.9;
 }
 
-#branco h3{
-    height: 300px;
-    font-size: 30px;
+#container-left p,#container-left a {
+    padding: 1 rem;
+    opacity: 0.8;
+}
+
+#form-login{
+    display: flex;
+    flex-direction: column;
+}
+
+#links{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap:.8rem;
 }
 
-#links i{
-    font-size: 25px;
-    color: gray;
+#links a{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid rgb(216,214,215);
     padding: 15px;
-    
+    height: auto;
 }
 
+#container-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-#purple{
-    background-color: rgb(105, 8, 105);
+#container-reset-password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#reset-password{
+    text-decoration: none;
+    color: #161616;
+    text-align: center;
+    width: fit-content;
+}
+
+.purple-button{
+    background-color: purple;
     color: white;
-    width: 500px;
-    height: 500px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: .8rem;
 }
 
+.purple-button:hover{
+    background-color: darkviolet;
+}
 
-#purple h3{
+/* container da direta */
+
+container-right h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
     font-size: 25px;
 }
 
-
-#purple p {
+#container-right p{
     align-items: center;
     padding: 10px;
 }
 
-#purple button{
+#container-right button{
     background-color: transparent;
     color: white;
     border-radius: 10px;
@@ -74,11 +130,10 @@ body{
     align-items: center;
 }
 
-
 #branco button{
     border: none;
     background: transparent;
-    display: flex;
+    display: flexbox;
     align-items: center;
     justify-content: center;
     color: white;
@@ -88,34 +143,30 @@ body{
 }
 
 
-#branco input{
+.cadaster_input{
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    background:  rgb(219, 219, 221);
+    background: rgb(219,219,221);
     padding: 10px 80px;
     margin: 10px;
     border-radius: 10px;
 }
 
+/* Container Selecionado */
 
+.onblur-container{
 
+    background-color: rgb(105,8,105);
+    color: #f2f2f2;
+    border-radius: 2rem;
+    overflow: hidden;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.onblur-container #form-login{
+    display: none;
+}
 
 
 
