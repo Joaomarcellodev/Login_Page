@@ -75,6 +75,32 @@ body{
 }
 
 
+#branco button{
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: purple;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+#branco input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background:  rgb(219, 219, 221);
+    padding: 10px 80px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
 
 
 
