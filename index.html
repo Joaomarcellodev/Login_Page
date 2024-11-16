@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <section>
         <div id="container-auth">
+
+            <!-- container login -->
             <div id="container-left" class="blur-container">
-                <h3>Login</h3>
-                <div id="form-login">
+                <div id="container-onblur-login">
+                    <h3>Login</h3>
+                    <p>Entre com suas informações</p>
+                    <button id="blur-login-btn">Logar</button>
+                </div>
+
+                <form id="form-login">
+                    <h3>Login</h3>
                     <div id="links">
                         <a href="">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" fill="gray" height="15"
@@ -43,23 +53,44 @@
                             </svg>
                         </a>
                     </div>
+
                     <p>Ou entre usando e-mail ou senha</p>
+
                     <div id="container-inputs">
-                        <input type="text" placeholder="Email" class="login-input" id="login-email">
-                        <input type="password" placeholder="Senha" class="login-input">
+                        <input type="text" placeholder="Email" class="login-input" id="email-login">
+                        <input type="password" placeholder="Senha" class="login-input" id="password-login">
                     </div>
+
                     <div id="container-reset-password">
                         <a href="" id="reset-password">Esqueci minha senha</a>
                     </div>
-                    <button class="purple-button">ENTRAR</button>
-                </div>
-            </div>
-            <div id="container-right" class="blur-container">
+
+                    <button type="submit" class="purple-button">ENTRAR</button>
+                </form>
+        </div>
+
+        <!-- container cadaster -->
+        <div id="container-right" class="onblur-container">
+            <div id="container-onblur-cadaster">
                 <h3>Bem vindo !</h3>
                 <p>Cadastre-se com suas informações para acessar todos os recursos</p>
-                <button>Criar conta</button>
+                <button id="blur-cadaster-btn">Criar conta</button>
             </div>
+
+            <div id="container-cadaster">
+                <h3>Cadastro</h3>
+                <p>Entre com suas informações</p>
+                <div id="container-inputs">
+                    <input type="text" placeholder="Email" class="login-input" id="email-cadaster">
+                    <input type="password" placeholder="Senha" class="login-input" id="password-cadaster">
+                    <input type="password" placeholder="Confirmar Senha" class="login-input"
+                        id="confirm-senha-cadaster">
+                </div>
+                <button class="purple-button">CADASTRAR</button>
+            </div>
+        </div>
         </div>
     </section>
 </body>
+
 </html>

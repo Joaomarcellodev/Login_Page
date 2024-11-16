@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    transition: all 250ms ease;
 }
 
 body {
@@ -14,44 +15,67 @@ body {
 }
 
 section {
+    align-items: center;
+    justify-content: center;
+    display: flex;
     background-color: rgb(255, 255, 255);
     color: #161616;
     border-radius: 2rem;
     overflow: hidden;
     max-width: 70%;
     width: 100%;
+    min-height: 70%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+    will-change: transform, background-color;
 }
 
 #container-auth {
     display: flex;
-    min-height: 450px;
+    height: 100%;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
 }
 
-#container-left, #container-right {
+#container-left {
+    position: absolute;
+    top: 0;
+    height: 100%;
     width: 50%;
-    display: flex;
-    flex-direction: column;
+    left: 0;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
 }
 
-#container-left h3, #container-right h3 {
+#container-left h3, #container-right #container-cadaster h3 {
     font-size: 2rem;
     padding: 1rem;
+    opacity: 0.9;
 }
 
-#container-left p, #container-right p, #reset-password {
-    opacity: 0.8;
+#container-left p,
+#container-left a {
     padding: 1rem;
+    opacity: 0.8;
+}
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-login h3 {
+    text-align: center;
 }
 
 #links {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: .8rem;
 }
 
 #links a {
@@ -60,37 +84,30 @@ section {
     border-radius: 10px;
     border: 2px solid rgb(216, 214, 215);
     padding: 15px;
+    height: auto;
+}
+
+#links a:hover {
+    background-color: purple;
+    border-color: purple;
+}
+
+#links a:hover svg {
+    fill: white !important;
 }
 
 #container-inputs {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    outline: none;
 }
 
-.login-input {
+#container-inputs input {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
     background-color: rgb(219, 219, 221);
     width: 100%;
-}
-
-.purple-button, #container-right button {
-    background-color: purple;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 4rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-.purple-button:hover, #container-right button:hover {
-    background-color: darkviolet;
 }
 
 #container-reset-password {
@@ -100,21 +117,182 @@ section {
     gap: 1rem;
 }
 
+#container-reset-password a:hover {
+    text-decoration: underline;
+}
+
 #reset-password {
     text-decoration: none;
     color: #161616;
+    text-align: center;
+    width: fit-content;
 }
 
-#container-right {
+.purple-button {
     background-color: purple;
     color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
 }
 
-@media (max-width: 768px) {
-    #container-auth {
-        flex-direction: column;
+.purple-button:hover {
+    background-color: darkviolet;
+}
+
+/* container da direita */
+#container-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#container-cadaster {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 70%;
+}
+
+#container-cadaster  p {    
+    margin-bottom: 1rem;
+}
+
+#container-right h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+#container-right #container-inputs {
+    margin-bottom: 1rem;
+}
+
+#container-right p {
+    align-items: center;
+    padding: 10px;
+}
+
+/* Container selecionado */
+
+#container-onblur-login,
+#container-onblur-cadaster {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(105, 8, 105, 0.8);
+    color: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
+    z-index: 10;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+#container-onblur-login {
+    left: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+    gap: 1rem;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+#container-onblur-cadaster {
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+#container-onblur-login button,
+#container-onblur-cadaster button {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+#container-onblur-login button:hover, #container-onblur-cadaster button:hover {
+    background-color: #ffffff;
+    color: purple;
+}
+
+.blur-container #form-login {
+    display: flex;
+}
+
+.onblur-container #container-onblur-login,
+.onblur-container #container-onblur-cadaster {
+    display: flex;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.blur-container #container-onblur-login,
+.blur-container #container-onblur-cadaster {
+    display: none;
+}
+
+.onblur-container p {
+    opacity: 1 !important;
+}
+
+.onblur-container #form-login,
+.onblur-container #container-cadaster {
+    display: none;
+}
+
+/* animation shake */
+
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
     }
-    #container-left, #container-right {
-        width: 100%;
+
+    25% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
