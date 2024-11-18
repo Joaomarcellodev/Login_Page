@@ -127,6 +127,11 @@ section {
     text-align: center;
     width: fit-content;
 }
+}
+
+#container-reset-password a:hover {
+    text-decoration: underline;
+}
 
 .purple-button {
     background-color: purple;
@@ -412,5 +417,129 @@ section {
 
     .purple-button {
         font-size: 0.8rem;
+    }
+}
+=======
+}
+
+#container-right #container-inputs {
+    margin-bottom: 1rem;
+}
+
+#container-right p {
+    align-items: center;
+    padding: 10px;
+}
+
+/* Container selecionado */
+
+#container-onblur-login,
+#container-onblur-cadaster {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(105, 8, 105, 0.8);
+    color: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
+    z-index: 10;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+#container-onblur-login {
+    left: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+    gap: 1rem;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+#container-onblur-cadaster {
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    padding: 4rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+#container-onblur-login button,
+#container-onblur-cadaster button {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+#container-onblur-login button:hover, #container-onblur-cadaster button:hover {
+    background-color: #ffffff;
+    color: purple;
+}
+
+.blur-container #form-login {
+    display: flex;
+}
+
+.onblur-container #container-onblur-login,
+.onblur-container #container-onblur-cadaster {
+    display: flex;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.blur-container #container-onblur-login,
+.blur-container #container-onblur-cadaster {
+    display: none;
+}
+
+.onblur-container p {
+    opacity: 1 !important;
+}
+
+.onblur-container #form-login,
+.onblur-container #container-cadaster {
+    display: none;
+}
+
+/* animation shake */
+
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
