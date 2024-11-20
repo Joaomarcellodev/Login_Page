@@ -133,6 +133,11 @@ section {
     text-decoration: underline;
 }
 
+
+#container-reset-password a:hover {
+    text-decoration: underline;
+}
+
 .purple-button {
     background-color: purple;
     color: white;
@@ -418,8 +423,6 @@ section {
     .purple-button {
         font-size: 0.8rem;
     }
-}
-=======
 }
 
 #container-right #container-inputs {
