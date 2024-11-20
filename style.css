@@ -127,6 +127,11 @@ section {
     text-align: center;
     width: fit-content;
 }
+}
+
+#container-reset-password a:hover {
+    text-decoration: underline;
+}
 
 
 #container-reset-password a:hover {
